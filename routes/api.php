@@ -18,6 +18,8 @@ use App\Http\Controllers\Api\V1\LoginController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::get('/login/{provider}', [LoginController::class,'redirectToProvider']);
+Route::get('/login/{provider}/callback', [LoginController::class,'handleProviderCallback']);
  Route::prefix('v1')->group(function () {
     // Route::middleware('log.route')->group(function(){
 
